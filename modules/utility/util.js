@@ -3,7 +3,11 @@ function compareArrays(parent, child) {
 		arr =>
 			arr.length === child.length && arr.every((val, i) => val === child[i]),
 	);
-	console.log("hola");
 }
 
-export { compareArrays };
+function validCoordinate(input) {
+	const valid = /^\s*\[?\s*-?\d+\s*,\s*-?\d+\s*\]?\s*$/;
+	return valid.test(input);
+}
+
+export { compareArrays, validCoordinate };
