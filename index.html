@@ -17,49 +17,60 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- TITULO PAGINA -->
-    <title>Rotación</title>
+    <title>Algoritmo de Rotación</title>
   </head>
   <body>
     <header>
       <div class="title border_maker">
-        <h1 class="comic_font">Algoritmo De Rotación</h1>
+        <h1 class="comic_font">回転 Algoritmo De Rotación</h1>
       </div>
-      <div class="icon separator"></div>
+      <div class="icon separator">
+        <h3>回転アルゴリズム</h3>
+        <p>Emm - Mary - Gabo</p>
+      </div>
     </header>
 
     <main>
-      <div class="input-container border_maker">
-        <h2 class="comic_font">Puntos</h2>
-        <input
-          class="input"
-          id="inputCoordinate"
-          name="text"
-          type="text"
-          placeholder="Ingrese sus coordenadas..."
-        />
-        <button class="brutalist-button">
-          <div class="button-text">
-            <span>REALIZAR / </span>
-            <span>GRAFICA</span>
-          </div>
-        </button>
-        <input
-          id="graphicateButton"
-          type="button"
-          value="Graficar"
-          class="graphicateButton"
-        />
-      </div>
+      <article class="input-container border_maker">
+        <div class="group points">
+          <h2 class="comic_font">Puntos</h2>
+          <p>(x,y)</p>
+        </div>
+        <div class="group">
+          <input
+            class="input"
+            id="inputCoordinate"
+            name="text"
+            type="text"
+            placeholder="Ingrese sus coordenadas..."
+          />
 
-      <!-- <div class="input_sep separator"></div> -->
-      <figure class="border_maker"></figure>
+          <button
+            class="brutalist-button graphicateButton"
+            id="graphicateButton"
+          >
+            <div class="button-text">
+              <span>Realizar / </span>
+              <span>GRÁFICA</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="separator knob"></div>
+      </article>
+
+      <article class="border_maker">
+        <div class="coordinatesContainer">
+          <h2>Coordenadas ingresadas</h2>
+          <ul class="listContainer"></ul>
+        </div>
+      </article>
     </main>
 
-    <div class="coordinatesContainer">
-      <h2>Coordenadas ingresadas</h2>
-      <ul class="listContainer"></ul>
+    <figure>
+      <!-- aqui la grafica  -->
       <div class="imageContainer"></div>
-    </div>
+    </figure>
 
     <script type="module" src="main.js"></script>
   </body>
