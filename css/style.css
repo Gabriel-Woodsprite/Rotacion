@@ -4,16 +4,18 @@
   /* COLORS: */
   --black: #000000;
   --withe: #ffffff;
+  --red: #bd3b35;
+  --blue: #406a69;
+
   --black_variation: #010101;
   --withe_variation: #d6d9dd;
   --font_grey_color: #888888;
-  --red: #bd3b35;
-  --red_highlight: #c2413b;
+
+  --red_highlight: #ca4e44;
   --light_red_highlight: #df9b88;
 
-  /* BACKGROUNDS: */
-  --comic_bg_highlight:/*  #232e2a */ #303936;
-  --comic_bg_color: #dcbe9b;
+  --comic_bg_highlight: #1a1a1a;
+  --comic_bg_color: #c3ad88;
 
   /* FONTS: */
   --optional_font: "Saira", sans-serif;
@@ -45,7 +47,7 @@
 }
 
 .separator {
-  background-color: var(--comic_bg_highlight);
+  background-color: var(--blue);
   border: 3px solid var(--black);
 }
 
@@ -64,7 +66,7 @@ body {
   height: 100vh;
   padding: 10px;
 
-  background: var(--comic_bg_color);
+  background: var(--comic_bg_highlight);
 }
 
 /* ---- APP COMPONENTS -------------------------------------------------------- */
@@ -101,36 +103,48 @@ header {
 .icon {
   width: 30%;
   height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
 }
 
 /* - - - - MAIN -------------------------------------------------------- */
 
 main {
   gap: 10px;
-
   width: 100%;
 
   display: flex;
   flex-direction: row;
-
-  background-color: #00a4ef;
 }
 
-main figure {
-  width: 50%;
-  height: 80vh;
+.group {
+  gap: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
 
-  background-color: #bd3b35;
+.points {
+  width: 90%;
+  justify-content: space-between;
 }
 
 main article {
   width: 50%;
+  height: 80vh;
+
+  background-color: var(--comic_bg_color);
 }
 
-.input_sep {
+.knob {
+  gap: 40px;
+  padding: 12px;
   width: 50%;
-  height: 10vh;
-  margin-top: 10px;
+  height: 30vh;
 }
 
 /* INPUT*/
@@ -155,7 +169,7 @@ main article {
   border-radius: 0;
   outline: none;
   transition: all 0.3s ease;
-  box-shadow: 8px 8px 0 var(--black);
+  box-shadow: 8px 8px 0 var(--blue);
 }
 
 .input::placeholder {
@@ -203,11 +217,17 @@ main article {
   animation: typing 2s steps(30, end);
 }
 .input-container {
-  position: relative;
+  gap: 40px;
+  padding: 12px;
   width: 50%;
-  height: 68vh;
+  height: 30vh;
 
-  background-color: #303936;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: var(--red_highlight);
 }
 
 .input::placeholder {
@@ -346,15 +366,15 @@ main article {
   justify-content: center;
   cursor: pointer;
   width: 169px;
-  height: 60px;
-  background-color: #000;
-  color: #fff;
+  height: 59px;
+  background-color: var(--black);
+  color: var(--withe);
   text-decoration: none;
   font-family: Arial, sans-serif;
   font-weight: bold;
-  border: 3px solid #fff;
-  outline: 3px solid #000;
-  box-shadow: 6px 6px 0 #00a4ef;
+  border: 3px solid var(--withe);
+  outline: 3px solid var(--black);
+  box-shadow: 8px 8px 0 var(--blue);
   transition: all 0.1s ease-out;
   padding: 0 15px;
   box-sizing: border-box;
@@ -398,9 +418,9 @@ main article {
 
 .brutalist-button:hover {
   transform: translate(-4px, -4px);
-  box-shadow: 10px 10px 0 #000;
-  background-color: #000;
-  color: #fff;
+  box-shadow: 10px 10px 0 var(--black);
+  background-color: var(--black);
+  color: var(--withe);
 }
 
 @keyframes slide {
@@ -415,9 +435,9 @@ main article {
 .brutalist-button:active {
   transform: translate(4px, 4px);
   box-shadow: 0px 0px 0 var(--red);
-  background-color: #fff;
-  color: #000;
-  border-color: #000;
+  background-color: var(--withe);
+  color: var(--black);
+  border-color: var(--black);
 }
 
 .button-text {
@@ -438,11 +458,11 @@ main article {
 }
 
 .button-text span:first-child {
-  font-size: 11px;
+  font-size: 10px;
   text-transform: uppercase;
 }
 
 .button-text span:last-child {
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
 }
