@@ -1,25 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
-	<body>
-		<label for="inputCoordinate">Ingrese una coordenada</label>
-		<input type="text" name="inputCoordinate" id="inputCoordinate" />
-		<br />
-		<div class="coordinatesContainer">
-			<h2>Coordenadas ingresadas</h2>
-			<ul class="listContainer"></ul>
-		</div>
-		<br />
-		<input
-			id="graphicateButton"
-			type="button"
-			value="Graficar"
-			class="graphicateButton" />
-		<div class="imageContainer"></div>
-		<script type="module" src="main.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Rotación</title>
+  </head>
+  <body>
+    <header>
+      <div class="title border_maker">
+        <h1 class="comic_font">Algoritmo De Rotación</h1>
+      </div>
+      <div class="icon separator"></div>
+    </header>
+
+    <main>
+      <div class="input-container border_maker">
+        <h2 class="comic_font">Puntos</h2>
+        <input
+          class="input"
+          id="inputCoordinate"
+          name="text"
+          type="text"
+          placeholder="Ingrese sus coordenadas..."
+        />
+        <button class="brutalist-button">
+          <div class="button-text">
+            <span>REALIZAR / </span>
+            <span>GRAFICA</span>
+          </div>
+        </button>
+        <input
+          id="graphicateButton"
+          type="button"
+          value="Graficar"
+          class="graphicateButton"
+        />
+      </div>
+
+      <!-- <div class="input_sep separator"></div> -->
+      <figure class="border_maker"></figure>
+    </main>
+
+    <div class="coordinatesContainer">
+      <h2>Coordenadas ingresadas</h2>
+      <ul class="listContainer"></ul>
+      <div class="imageContainer"></div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
 </html>
