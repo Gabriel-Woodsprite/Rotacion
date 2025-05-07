@@ -1,11 +1,14 @@
 import { compareArrays, validCoordinate } from "/modules/utility/util.js";
-import { setMatrix, setDegree } from "./matrixStore.js";
 
 const coordinatesArray = [];
-let degree = 50;
+let degree = 0;
 
 const coordinateInput = document.querySelector("#inputCoordinate");
 const listContainer = document.querySelector(".listContainer");
+
+document.getElementById("c-rng").addEventListener("circular-input", e => {
+	degree = e.detail.value;
+});
 
 listContainer.addEventListener("click", function (e) {
 	if (e.target.classList.contains("editable")) {
@@ -51,7 +54,6 @@ function renderCoordinates() {
 		const row = document.createElement("DIV");
 		row.innerHTML = `<SPAN data-index=${index} class="editable">[${point[0]}, ${point[1]}]</SPAN>`;
 		listContainer.appendChild(row);
-		setMatrix(coordinatesArray);
 	});
 }
 

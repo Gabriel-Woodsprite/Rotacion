@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- META DATOS -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<!-- META DATOS -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- FUENTES / TEXTO -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bangers&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+		<!-- FUENTES / TEXTO -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bangers&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet" />
 
-    <!-- LINK HOJA DE ESTILOS -->
-    <link rel="stylesheet" href="css/style.css" />
+		<!-- LINK HOJA DE ESTILOS -->
+		<link rel="stylesheet" href="css/slider.css" />
+		<link rel="stylesheet" href="css/style.css" />
 
     <!-- TITULO PAGINA -->
     <title>Algoritmo de Rotación</title>
@@ -56,7 +56,20 @@
           </button>
         </div>
 
-        <div class="separator knob"></div>
+        <div class="separator knob">
+        <div class="slider">
+				<input
+					id="c-rng"
+					type="range"
+					class="c-rng"
+					min="0"
+					max="360"
+					step="1"
+					value="45"
+					data-range="circular"
+					data-modifier="c-rng--darkcyan" />
+			</div>
+        </div>
       </article>
 
       <article class="border_maker">
@@ -72,6 +85,7 @@
       <div class="imageContainer"></div>
     </figure>
 
-    <script type="module" src="main.js"></script>
-  </body>
+		<script type="module" src="main.js"></script>
+		<script src="modules/slider.js"></script>
+	</body>
 </html>
