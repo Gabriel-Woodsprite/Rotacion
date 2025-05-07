@@ -1,21 +1,19 @@
 export function rotationAlgorithm(coordinatesArray, degree) {
-	// const rotationArray = [
-	// 	[Math.cos(degree), -Math.sin(degree), 0],
-	// 	[Math.sin(degree), Math.cos(degree), 0],
-	// 	[0, 0, 1],
-	// ];
 	const rotationArray = [
-		[0, Math.sin(degree), 0],
+		[Math.cos(degree), -Math.sin(degree), 0],
 		[Math.sin(degree), Math.cos(degree), 0],
 		[0, 0, 1],
 	];
 
 	let newArray = coordinatesArray.map(subArray => [...subArray, 1]);
+	let transposedArray = transpose(newArray);
 
 	const rowsA = rotationArray.length;
 	const colsA = rotationArray[0].length;
-	const rowsB = newArray.length;
-	const colsB = newArray[0].length;
+	const rowsB = transposedArray.length;
+	const colsB = transposedArray[0].length;
+
+	console.log(rotationArray);
 
 	const rotatedPoints = Array(rowsA)
 		.fill(null)
@@ -24,16 +22,17 @@ export function rotationAlgorithm(coordinatesArray, degree) {
 	for (let i = 0; i < rowsA; i++) {
 		for (let j = 0; j < colsB; j++) {
 			for (let k = 0; k < colsA; k++) {
-				rotatedPoints[i][j] += rotationArray[i][k] * newArray[k][j];
+				rotatedPoints[i][j] += rotationArray[i][k] * transposedArray[k][j];
 			}
 		}
 	}
 
-	console.log(
-		rotatedPoints.map(subArray => subArray.slice(0, -1)),
-		newArray,
-	);
-	return rotatedPoints.map(subArray => subArray.slice(0, -1));
+	console.log(transpose(rotatedPoints.slice(0, -1)), transposedArray);
+	return transpose(rotatedPoints.slice(0, -1));
+}
+
+function transpose(array) {
+	return array[0].map((_, colIndex) => array.map(row => row[colIndex]));
 }
 
 // const rotatedPoints = [
