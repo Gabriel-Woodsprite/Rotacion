@@ -1,5 +1,8 @@
 import { compareArrays, validCoordinate } from "/modules/utility/util.js";
-import { coordinatesArray } from "/modules/rotationAlgorithm.js";
+import { setMatrix, setDegree } from "./matrixStore.js";
+
+const coordinatesArray = [];
+let degree = 50;
 
 const coordinateInput = document.querySelector("#inputCoordinate");
 const listContainer = document.querySelector(".listContainer");
@@ -37,7 +40,6 @@ function appendCoordinate(coordinate, index = -1) {
 			coordinatesArray[index] = coordinate;
 		}
 		renderCoordinates();
-		console.log(coordinatesArray);
 	} else {
 		alert("No pueden existir puntos repetidos");
 	}
@@ -49,6 +51,7 @@ function renderCoordinates() {
 		const row = document.createElement("DIV");
 		row.innerHTML = `<SPAN data-index=${index} class="editable">[${point[0]}, ${point[1]}]</SPAN>`;
 		listContainer.appendChild(row);
+		setMatrix(coordinatesArray);
 	});
 }
 
@@ -61,4 +64,4 @@ function parseCoordinates(input) {
 	return cleaned.split(",").map(Number);
 }
 
-export { appendCoordinate };
+export { coordinatesArray, degree, appendCoordinate };

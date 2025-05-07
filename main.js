@@ -1,10 +1,14 @@
-import { coordinatesArray, rotatedPoints } from "/modules/rotationAlgorithm.js";
-import {} from "/modules/inputControl.js";
+import { rotationAlgorithm } from "/modules/rotationAlgorithm.js";
+import { coordinatesArray, degree } from "/modules/inputControl.js";
+import { setDegree, setMatrix } from "./modules/matrixStore.js";
+
+console.log(coordinatesArray);
 
 const button = document.querySelector("#graphicateButton");
 let imageContainer = document.querySelector(".imageContainer");
 
 button.addEventListener("click", function (e) {
+	console.log(coordinatesArray);
 	if (coordinatesArray.length >= 3) {
 		fetch("http://localhost:8080", {
 			method: "POST",
@@ -13,7 +17,7 @@ button.addEventListener("click", function (e) {
 			},
 			body: JSON.stringify({
 				originalPoints: coordinatesArray,
-				rotatedPoints: rotatedPoints,
+				rotatedPoints: rotationAlgorithm(coordinatesArray, degree),
 			}),
 		})
 			.then(response => response.json()) //respuesta del servidor

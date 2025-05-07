@@ -10,4 +10,6 @@ function validCoordinate(input) {
 	return valid.test(input);
 }
 
-export { compareArrays, validCoordinate };
+function matrixMultiplication(matrixA, degree) {}
+
+export { compareArrays, validCoordinate, matrixMultiplication };
