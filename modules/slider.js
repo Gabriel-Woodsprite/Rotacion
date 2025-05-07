@@ -22,11 +22,16 @@ class RangeSlider {
 		this.initRange(this.range);
 	}
 
+	get value() {
+		return parseInt(this.range.value);
+	}
+
 	/**
 	 * @function initRange
 	 * @param {Node} range
 	 * @description Initialize: Create elements, add eventListeners etc.
 	 */
+
 	initRange(range) {
 		const circular = this.settings.range.includes("circular");
 		range.id = range.id || uuid();
@@ -184,6 +189,12 @@ class RangeSlider {
 		this.wrapper.dataset.value = this.range.value;
 		this.wrapper.style.setProperty("--angle", `${angle}deg`);
 		this.wrapper.style.setProperty("--gradient-end", `${end}deg`);
+
+		this.range.dispatchEvent(
+			new CustomEvent("circular-input", {
+				detail: { value: parseInt(this.range.value) },
+			}),
+		);
 	}
 
 	/**
@@ -247,5 +258,11 @@ function uuid() {
 /* Demo: Run it */
 const elements = document.querySelectorAll("[data-range]");
 elements.forEach(element => {
-	new RangeSlider(element, element.dataset);
+	const slider = new RangeSlider(element, element.dataset);
+
+	element.addEventListener("input", () => {
+		console.log("hola");
+		console.log(parseInt(slider.range.value));
+		console.log(slider.value);
+	});
 });

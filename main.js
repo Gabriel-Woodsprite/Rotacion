@@ -1,6 +1,5 @@
 import { rotationAlgorithm } from "/modules/rotationAlgorithm.js";
 import { coordinatesArray, degree } from "/modules/inputControl.js";
-import { setDegree, setMatrix } from "./modules/matrixStore.js";
 
 console.log(coordinatesArray);
 

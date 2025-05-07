@@ -1,66 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- META DATOS -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<!-- META DATOS -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- FUENTES / TEXTO -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bangers&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+		<!-- FUENTES / TEXTO -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bangers&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet" />
 
-    <!-- LINK HOJA DE ESTILOS -->
-    <link rel="stylesheet" href="css/style.css" />
+		<!-- LINK HOJA DE ESTILOS -->
+		<link rel="stylesheet" href="css/slider.css" />
+		<link rel="stylesheet" href="css/style.css" />
 
-    <!-- TITULO PAGINA -->
-    <title>Rotación</title>
-  </head>
-  <body>
-    <header>
-      <div class="title border_maker">
-        <h1 class="comic_font">Algoritmo De Rotación</h1>
-      </div>
-      <div class="icon separator"></div>
-    </header>
+		<!-- TITULO PAGINA -->
+		<title>Rotación</title>
+	</head>
+	<body>
+		<header>
+			<div class="title border_maker">
+				<h1 class="comic_font">Algoritmo De Rotación</h1>
+			</div>
+			<div class="icon separator"></div>
+		</header>
 
-    <main>
-      <div class="input-container border_maker">
-        <h2 class="comic_font">Puntos</h2>
-        <input
-          class="input"
-          id="inputCoordinate"
-          name="text"
-          type="text"
-          placeholder="Ingrese sus coordenadas..."
-        />
-        <button class="brutalist-button">
-          <div class="button-text">
-            <span>REALIZAR / </span>
-            <span>GRAFICA</span>
-          </div>
-        </button>
-        <input
-          id="graphicateButton"
-          type="button"
-          value="Graficar"
-          class="graphicateButton"
-        />
-      </div>
+		<main>
+			<div class="input-container border_maker">
+				<h2 class="comic_font">Puntos</h2>
+				<input
+					class="input"
+					id="inputCoordinate"
+					name="text"
+					type="text"
+					placeholder="Ingrese sus coordenadas..." />
+				<button class="brutalist-button">
+					<div class="button-text">
+						<span>REALIZAR / </span>
+						<span>GRAFICA</span>
+					</div>
+				</button>
+				<input
+					id="graphicateButton"
+					type="button"
+					value="Graficar"
+					class="graphicateButton" />
+			</div>
+			<div class="slider">
+				<input
+					id="c-rng"
+					type="range"
+					class="c-rng"
+					min="0"
+					max="360"
+					step="1"
+					value="45"
+					data-range="circular"
+					data-modifier="c-rng--darkcyan" />
+			</div>
 
-      <!-- <div class="input_sep separator"></div> -->
-      <figure class="border_maker"></figure>
-    </main>
+			<!-- <div class="input_sep separator"></div> -->
+			<figure class="border_maker"></figure>
+		</main>
 
-    <div class="coordinatesContainer">
-      <h2>Coordenadas ingresadas</h2>
-      <ul class="listContainer"></ul>
-      <div class="imageContainer"></div>
-    </div>
+		<div class="coordinatesContainer">
+			<h2>Coordenadas ingresadas</h2>
+			<ul class="listContainer"></ul>
+			<div class="imageContainer"></div>
+		</div>
 
-    <script type="module" src="main.js"></script>
-  </body>
+		<script type="module" src="main.js"></script>
+		<script src="modules/slider.js"></script>
+	</body>
 </html>
